@@ -1,0 +1,32 @@
+.gradient-1 {
+  background-image: linear-gradient(
+    215deg,
+    rgb(14, 177, 185),
+    rgb(51, 36, 183)
+  );
+}
+
+.gradient-1 {
+  background-image: linear-gradient(
+    215deg,
+    rgb(14, 177, 185),
+    rgb(51, 36, 183)
+  );
+}
+.gradient-2 {
+  background-image: linear-gradient(
+    115deg,
+    rgb(241, 89, 159),
+    rgb(105, 103, 234)
+  );
+}
+.gradient-3 {
+  background-image: linear-gradient(45deg, rgb(54, 93, 216), rgb(34, 171, 212));
+}
+.gradient-4 {
+  background-image: linear-gradient(
+    225deg,
+    rgb(152, 210, 89) 0%,
+    rgb(124, 152, 39) 100%
+  );
+}

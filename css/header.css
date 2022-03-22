@@ -1,0 +1,170 @@
+.header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100%;
+}
+
+.header_context {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 85%;
+  height: 60%;
+}
+
+.header_image-wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 35%;
+}
+
+.header_image-square {
+  position: relative;
+  width: 0;
+  height: 0;
+  padding: 50%;
+  margin-bottom: 1rem;
+}
+
+.header_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+}
+.header_contacts {
+  width: 57%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact {
+  display: flex;
+  align-items: center;
+
+  height: 1.5rem;
+  margin: 0.5rem 0;
+
+  transform-origin: left center;
+  transition: all 0.3s;
+}
+
+.contact:hover {
+  transform: scale(1.2);
+}
+
+.contact_icon-wrapper {
+  position: relative;
+
+  height: 100%;
+  width: 1.5rem;
+
+  margin-right: 0.5rem;
+}
+.contact_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  object-fit: contain;
+
+  fill: #ffffff;
+}
+.contact_link {
+  font-size: 1.3rem;
+}
+
+.more {
+  position: absolute;
+
+  display: flex;
+
+  bottom: 0.3rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 0.8rem;
+}
+
+.arrow {
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 0.5rem 0.3rem 0.5rem;
+}
+.arrow:before,
+.arrow:after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-left: 0.1rem solid #ffffff;
+  border-bottom: 0.1rem solid #ffffff;
+  animation: arrow 5s linear infinite;
+}
+.arrow:after {
+  animation: arrow 5s linear infinite -2.5s;
+}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    transform: translate(0, -0.3rem) rotate(-45deg);
+  }
+  10%,
+  90% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0.3rem) rotate(-45deg);
+  }
+}
+
+@media (orientation: portrait) {
+  .header_context {
+    flex-direction: column;
+
+    width: 90%;
+    height: 80%;
+  }
+
+  .header_contacts {
+    width: 100%;
+    height: 60%;
+    /* width: calc(300px + (350 - 300) * ((100vw - 320px) / (700 - 320))); */
+  }
+
+  .header_image-wrapper {
+    /* height: 35%; */
+    width: 60%;
+  }
+
+  .contact {
+    justify-content: center;
+  }
+}
