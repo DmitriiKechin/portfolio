@@ -15,7 +15,7 @@ let timerScroll;
 let timerSmallScroll;
 let isScroll = true;
 
-const scroll = (event) => {
+const scroll = (delta) => {
   clearTimeout(timerScroll);
   clearTimeout(timerSmallScroll);
 
@@ -24,7 +24,7 @@ const scroll = (event) => {
   }, 50);
 
   if (isScroll) {
-    if (Math.abs(event.deltaY) <= 30) {
+    if (Math.abs(delta) <= 30) {
       window.scrollTo({
         top: currentScrollPosition + event.deltaY,
       });
@@ -34,11 +34,11 @@ const scroll = (event) => {
       return;
     }
 
-    if (event.deltaY > 30) {
+    if (delta > 30) {
       currentScrollPosition += hightWindow;
     }
 
-    if (event.deltaY < -30) {
+    if (delta < -30) {
       currentScrollPosition -= hightWindow;
     }
 
@@ -56,5 +56,16 @@ const scroll = (event) => {
 
 document.body.style.overflow = 'hidden';
 window.addEventListener('wheel', (event) => {
-  scroll(event);
+  scroll(event.deltaY);
+});
+
+window.addEventListener('keyup', (event) => {
+  if (event.code === 'ArrowUp' || event.code === 'PageUp') {
+    scroll(-31);
+  }
+
+  if (event.code === 'ArrowDown' || event.code === 'PageDown') {
+    scroll(31);
+  }
+  console.log(event.code);
 });
