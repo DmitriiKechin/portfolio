@@ -17,7 +17,7 @@ const pageSlider = new Swiper('.page', {
   //колёсико
   mousewheel: {
     //чувствительсноть
-    sensitivity: 1,
+    sensitivity: 0.7,
   },
   speed: 700,
   //обновление слайдера
@@ -30,9 +30,9 @@ const pageSlider = new Swiper('.page', {
   preloadImages: false,
   lazy: {
     // подгружать на старте переключения
-    loadOnTransitionStart: false,
+    loadOnTransitionStart: true,
     //подгружать следующий и предыдущий слайд
-    loadPrevNext: false,
+    loadPrevNext: true,
   },
   //следить за видимыми слайдами
   watchSlidesProgress: true,
@@ -41,7 +41,9 @@ const pageSlider = new Swiper('.page', {
 
   on: {
     init: function () {
-      setScrollType();
+      setTimeout(() => {
+        setScrollType();
+      }, 500);
     },
     resize: function () {
       setScrollType();
@@ -60,11 +62,10 @@ function setScrollType() {
     );
     if (slideContent) {
       const slideContentHeight = slideContent.offsetHeight;
-      if (slideContentHeight > document.documentElement.clientHeight) {
-        console.log('pageSlider: ', pageSlider);
-        pageSlider.params.freeMode.enabled = true;
 
-        console.log('dlfjjjg');
+      if (slideContentHeight > document.documentElement.clientHeight) {
+        console.log(slideContent.children);
+        pageSlider.params.freeMode.enabled = true;
       }
     }
   });
