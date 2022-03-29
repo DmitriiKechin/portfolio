@@ -69,7 +69,6 @@ const scroll = (delta, delay) => {
       0,
       cards[activCardNumber].getBoundingClientRect().top + window.pageYOffset
     );
-    console.log('cards[activCardNumber]: ', cards[activCardNumber]);
   }
 };
 

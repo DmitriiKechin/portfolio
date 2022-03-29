@@ -9,6 +9,7 @@
 
 .project__content {
   position: relative;
+  width: 80%;
 
   flex: 1 1 80%;
   padding: 1rem 10%;
@@ -25,8 +26,9 @@
 }
 
 .browser {
-  flex: 1 1 80%;
-  width: 100vh;
+  /* flex: 1 1 80%; */
+  max-height: 80%;
+  /* width: 80vh; */
   max-width: 100%;
 
   display: flex;
@@ -113,7 +115,17 @@
 }
 
 @media (orientation: portrait) {
+  .browser {
+    max-height: calc(80vh * 0.45);
+  }
+
   .project__description {
-    max-height: 55%;
+    max-height: calc(80vh * 0.55);
+    flex-direction: column;
+  }
+
+  .project__description-text {
+    margin-right: 0;
+    margin-bottom: 2rem;
   }
 }
