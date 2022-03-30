@@ -65,7 +65,6 @@ function setScrollType() {
 
       if (slideContentHeight > document.documentElement.clientHeight) {
         pageSlider.params.freeMode.enabled = true;
-        pageSlider.params.parallax.enabled = false;
         removeParalax();
       }
     }
