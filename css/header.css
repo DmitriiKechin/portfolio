@@ -8,14 +8,12 @@
 }
 
 .header__context {
-  flex: 1 1 60%;
-  padding: 0 7%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  /* width: 85%; */
+  max-width: 1200px;
+  width: 85%;
   /* height: 60%; */
 }
 
@@ -35,7 +33,7 @@
   position: relative;
   width: 0;
   height: 0;
-  padding: 50%;
+  padding: 33%;
   margin-bottom: 1rem;
 }
 
@@ -64,10 +62,8 @@
 
   transform-origin: left center;
   transition: all 0.3s;
-}
 
-.contact:hover {
-  transform: scale(1.2);
+  transform: scale(1);
 }
 
 .contact__icon-wrapper {
@@ -167,5 +163,11 @@
 
   .contact {
     justify-content: center;
+  }
+}
+
+@media (hover: hover) {
+  .contact:hover {
+    transform: scale(1.2);
   }
 }
