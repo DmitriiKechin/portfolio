@@ -64,9 +64,30 @@ function setScrollType() {
       const slideContentHeight = slideContent.offsetHeight;
 
       if (slideContentHeight > document.documentElement.clientHeight) {
-        console.log(slideContent.children);
         pageSlider.params.freeMode.enabled = true;
+        pageSlider.params.parallax.enabled = false;
+        removeParalax();
       }
     }
   });
+}
+
+function removeParalax() {
+  const position = document.querySelectorAll('[data-swiper-parallax]');
+  const opacity = document.querySelectorAll('[data-swiper-parallax-opacity]');
+  const duration = document.querySelectorAll('[data-swiper-parallax-duration]');
+
+  if (position) {
+    position.forEach((elem) => {
+      elem.dataset.swiperParallax = 0;
+    });
+  }
+
+  if (opacity) {
+    opacity.forEach((elem) => (elem.dataset.swiperParallaxOpacity = 1));
+  }
+
+  if (duration) {
+    duration.forEach((elem) => (elem.dataset.swiperParallaxDuration = 0));
+  }
 }
