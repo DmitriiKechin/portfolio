@@ -17,7 +17,7 @@ const pageSlider = new Swiper('.page', {
   //колёсико
   mousewheel: {
     //чувствительсноть
-    sensitivity: 0.7,
+    sensitivity: 0.3,
   },
   speed: 700,
   //обновление слайдера
